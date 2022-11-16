@@ -1,0 +1,22 @@
+{
+    "require": {
+        "nicollassilva/minasrouter": "^1.0",
+        "firebase/php-jwt": "^6.3",
+        "mongodb/mongodb": "^1.12",
+        "devanych/view-renderer": "^1.0"
+        
+        
+       
+       
+    },
+    "autoload": {
+        "psr-4": {
+            "MinasRouter\\": "src/",
+            "App\\": "App/",
+            "Firebase\\": "src/",
+            "MongoDB\\": "src/MongoDB/",
+            "Devanych\\View\\": "src/Devanych"
+           
+        }
+    }
+}

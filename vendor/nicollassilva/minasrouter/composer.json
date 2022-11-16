@@ -1,0 +1,42 @@
+{
+    "name": "nicollassilva/minasrouter",
+    "description": "MinasRouter is simple, fast and extremely readable for routes.",
+    "keywords": [
+        "Easy Route",
+        "Easy PHP Route",
+        "PHP Routing",
+        "PHP Route",
+        "Router",
+        "Route",
+        "Routes"
+    ],
+    "require-dev": {
+        "symfony/var-dumper": "^5.3",
+        "phpunit/phpunit": "9"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nicollas Silva",
+            "email": "lyod.hp@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "MinasRouter\\": "src/"
+        },
+        "files": [
+            "src/Helpers/helpers.php"
+        ]
+    },
+    "scripts": {
+        "router-tests": "vendor\\bin\\phpunit --testdox tests"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}

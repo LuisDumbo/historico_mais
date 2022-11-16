@@ -1,0 +1,20 @@
+.cor{
+    background-color:  rgb(63, 187, 192) !important;
+    border-color:  rgb(63, 187, 192) !important;
+}
+.coriput:focus {
+   
+    border:0.1px solid rgb(63, 187, 192)  !important;
+   
+  }
+.corb{
+    color:  white !important;
+}
+.corlink{
+    color:  rgb(63, 187, 192) !important;
+}
+
+.scrollto:hover{
+    color:  rgb(63, 187, 192) !important;
+}
+
