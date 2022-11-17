@@ -24,12 +24,13 @@ footer {
 
 /* tema */
 .tema{
-    margin-top: 10%;
+    margin-top: 7%;
    
 }
 
 .sidemenu{
-    margin-top: 50% !important;
+    margin-top: 10%;
+    overflow:scroll  !important;
 }
 
 .wrapper {

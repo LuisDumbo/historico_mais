@@ -34,8 +34,8 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link corlink scrollto  " href="<?php echo '/historico_mais' . route("user")  ?>">Home</a></li>
-                    <li><a class="nav-link  scrollto" href="<?php echo '/historico_mais' . route("documentacao")  ?>"> Documentação</a></li>
+                    <li><a class="nav-link  scrollto  " href="<?php echo '/historico_mais' . route("user")  ?>">Home</a></li>
+                    <li><a class="nav-link corlink  scrollto" href="<?php echo '/historico_mais' . route("documentacao")  ?>"> Documentação</a></li>
 
                     <li><a class="nav-link  scrollto" href="<?php echo '/historico_mais' . route("logout") ?>">logout</a></li>
 
@@ -47,190 +47,185 @@
         </div>
     </header><!-- End Header -->
 
-    <div class="app">
+    <div class="container-fluid">
+        <div class="row">
 
-
-        <aside class="sidebar">
-
-            <nav class="menu">
-                <ul class="lista_item">
-                    <li>teste</li>
-                    
-                    <li>teste</li>
-                    <li>teste</li>
-                    <li>teste</li>
-                    <li>teste</li>
-                    <li>teste</li>
-                    <li>teste</li>
-                    <li>teste</li>
-                    <li>teste</li>
-                    <li>teste</li>
-
-                </ul>
-            </nav>
-
-        </aside>
-
-        <main class="content">
-            <div class="menu-toggle">
-                <div class="hamburger">
-                    <span></span>
+            <div class="col-2 px-1 bg-dark position-fixed  " id="sticky-sidebar">
+                <div class="nav flex-column flex-nowrap vh-100 overflow-auto text-white p-2  sidemenu d-flex justify-content-center align-items-center   ">
+                    <a href="./" class="corlink">Link 1</a>
+                    <a href="./" class=" corlink">Link 2</a>
+                    <a href="./" class="corlink">Link 3</a>
+                    <a href="./" class="corlink">Link 4</a>
+                    <a href="./" class="corlink">Link 5</a>
+                    <a href="./" class="corlink">Link 6</a>
+                    <a href="./" class="corlink">Link 7</a>
+                    <a href="./" class="corlink">Link 8</a>
+                    <a href="./" class="corlink">Link 9</a>
+                    <a href="./" class="corlink">Link 10</a>
+                    <a href="./" class="corlink">Link 11</a>
+                    <a href="./" class="corlink">Link 12</a>
+                    <a href="./" class="corlink">Link 13</a>
+                    <a href="./" class="corlink">Link 14</a>
+                    <a href="./" class="corlink">Link 15</a>
+                    <a href="./" class="corlink">Link 16</a>
                 </div>
             </div>
 
+            <div class="col-9 offset-3" id="main">
+                <main class="tema ">
 
-            <section class="row ">
-
-                <div class="col-md-6 intro">
-
-                    <h2 class="heading">Como Usar</h2>
-                    <p class="masi">
-                        fakeStoreApi can be used with any type of shopping project that needs products, carts, and users
-                        in JSON
-                        format. you can use examples below to check how fakeStoreApi works and feel free to enjoy it in
-                        your awesome
-                        projects!
-                    </p>
-                </div>
-            </section>
-
-
+                    <section class="row ">
+                        <div class="col-md-6 intro">
+                            <h2 class="heading">Como Usar</h2>
+                            <p class="masi">
+                                fakeStoreApi can be used with any type of shopping project that needs products, carts, and users
+                                in JSON
+                                format. you can use examples below to check how fakeStoreApi works and feel free to enjoy it in
+                                your awesome
+                                projects!
+                            </p>
+                        </div>
+                    </section>
 
 
-            <section id="try" class="row">
-                <h2 class="heading">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">Código de exemplo</font>
-                    </font>
-                </h2>
-
-                <pre class="userstyl"><code>fetch('https://fakestoreapi.com/products/1')<font></font>
-            .then(res=&gt;res.json())<font></font>
-            .then(json=&gt;console.log(json))</code></pre>
-
-                <h2 class="heading">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">Resusltado</font>
-                    </font>
-                </h2>
-
-                <pre class="userstyl">
-        {
-            "_id": {
-                "$oid": "63199d2fac057601f504e028"
-            },
-            "nome": "editado mais vezes, mais vezes",
-            "Data": "02/05/2022",
-            "sexo": "Femenino",
-            "tipo sanguinio": "AB2",
-            "BI": "399ei9dk"
-        }</pre>
 
 
-            </section>
-
-            <section class="row">
-                <h2 class="heading">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">Rotas</font>
-                    </font>
-                </h2>
-                <p>
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">Todos os métodos HTTP são suportados</font>
-                    </font>
-                </p>
-                <ul class="list">
-                    <li><span>
+                    <section id="try" class="row">
+                        <h2 class="heading">
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">GET</font>
+                                <font style="vertical-align: inherit;">Código de exemplo</font>
                             </font>
-                        </span>
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">/listar_paciente</font>
-                        </font>
-                    </li>
-                    <li><span>
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">POST</font>
-                            </font>
-                        </span>
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">/registar_paciente</font>
-                        </font>
-                    </li>
-                    <li><span>
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">POST</font>
-                            </font>
-                        </span>
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">/editar_paciente</font>
-                        </font>
-                    </li>
-                    <li><span>
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">GET</font>
-                            </font>
-                        </span>
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">/listar_medico</font>
-                        </font>
-                    </li>
-                    <li><span>
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">POST</font>
-                            </font>
-                        </span>
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">/registar_medico</font>
-                        </font>
-                    </li>
-                    <li><span>
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">POST</font>
-                            </font>
-                        </span>
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">/editar_mdico</font>
-                        </font>
-                    </li>
-                    <li><span>
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">POST</font>
-                            </font>
-                        </span>
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">/registar_consulta</font>
-                        </font>
-                    </li>
-                    <li><span>
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">POST</font>
-                            </font>
-                        </span>
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">/listar_consulta</font>
-                        </font>
-                    </li>
-                    <li><span>
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">POST</font>
-                            </font>
-                        </span>
-                        <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">/editar_consulta</font>
-                        </font>
-                    </li>
+                        </h2>
 
-                </ul>
+                        <pre class="userstyl"><code>fetch('https://fakestoreapi.com/products/1')<font></font>
+.then(res=&gt;res.json())<font></font>
+.then(json=&gt;console.log(json))</code></pre>
 
-            </section>
+                        <h2 class="heading">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Resusltado</font>
+                            </font>
+                        </h2>
+
+                        <pre class="userstyl">
+{
+"_id": {
+"$oid": "63199d2fac057601f504e028"
+},
+"nome": "editado mais vezes, mais vezes",
+"Data": "02/05/2022",
+"sexo": "Femenino",
+"tipo sanguinio": "AB2",
+"BI": "399ei9dk"
+}</pre>
 
 
-        </main>
+                    </section>
+
+                    <section class="row">
+                        <h2 class="heading">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Rotas</font>
+                            </font>
+                        </h2>
+                        <p>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Todos os métodos HTTP são suportados</font>
+                            </font>
+                        </p>
+                        <ul class="list">
+                            <li><span>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">GET</font>
+                                    </font>
+                                </span>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">/listar_paciente</font>
+                                </font>
+                            </li>
+                            <li><span>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">POST</font>
+                                    </font>
+                                </span>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">/registar_paciente</font>
+                                </font>
+                            </li>
+                            <li><span>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">POST</font>
+                                    </font>
+                                </span>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">/editar_paciente</font>
+                                </font>
+                            </li>
+                            <li><span>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">GET</font>
+                                    </font>
+                                </span>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">/listar_medico</font>
+                                </font>
+                            </li>
+                            <li><span>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">POST</font>
+                                    </font>
+                                </span>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">/registar_medico</font>
+                                </font>
+                            </li>
+                            <li><span>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">POST</font>
+                                    </font>
+                                </span>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">/editar_mdico</font>
+                                </font>
+                            </li>
+                            <li><span>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">POST</font>
+                                    </font>
+                                </span>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">/registar_consulta</font>
+                                </font>
+                            </li>
+                            <li><span>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">POST</font>
+                                    </font>
+                                </span>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">/listar_consulta</font>
+                                </font>
+                            </li>
+                            <li><span>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">POST</font>
+                                    </font>
+                                </span>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">/editar_consulta</font>
+                                </font>
+                            </li>
+
+                        </ul>
+
+                    </section>
+
+
+                </main>
+
+            </div>
+        </div>
     </div>
-
     <footer>
         <p>
             <font style="vertical-align: inherit;">
