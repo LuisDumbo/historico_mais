@@ -44,19 +44,17 @@ Route::middleware(AdminMiddleware::class)->prefix("api/")->group(function () {
 });
 
 
-Route::get("/logout",[LoginController::class,'sair'])->name("logout");
+Route::get("/logout", [LoginController::class, 'sair'])->name("logout");
 
 Route::get("/login/{erro?}", [LoginController::class, 'login']);
 Route::post("/login", [LoginController::class, 'autenticar'])->name("login");
 
 
 Route::middleware(UserMiddleware::class)->group(function () {
-   
-   Route::get("/user", [UserController::class, 'index'])->name('user');
-  //  Route::get("/doc", [UserController::class, 'index'])->name('doc');
-   Route::get("/documentacao", [UserController::class, 'documentacao'])->name('documentacao');
-   
 
+    Route::get("/user", [UserController::class, 'index'])->name('user');
+    //  Route::get("/doc", [UserController::class, 'index'])->name('doc');
+    Route::get("/documentacao", [UserController::class, 'documentacao'])->name('documentacao');
 });
 
 
@@ -66,17 +64,46 @@ Route::get("/", [UserController::class, 'home'])->name('home');
 
 
 Route::get("/not", function () {
+    /*
     $student = array(
         'Erro' => 'Tokem Invalido'
     );
 
-    header('HTTP/1.0 400 Bad Request');
+   // header('HTTP/1.0 400 Bad Request');
+    new Response('unauthorized ', '', $student);
+    */
+
+    header("Access-Control-Allow-Origin: *");
+    header("Content-Type: application/json; charset=UTF-8");
+
+    header('Content-type: application/json');
+    $student = array(
+        'Erro' => 'Tokem Invalido'
+    );
+
+    // header('HTTP/1.0 400 Bad Request');
     new Response('unauthorized ', '', $student);
 })->name('not');
 
 Route::fallback(function () {
-    echo 'Rota Inexistente!';
+    /*
+    $student = array(
+        'Erro' => 'Rota Inexistente!'
+    );
 
+    //  header('HTTP/1.0 400 Bad Request');
+    new Response('unauthorized ', '', $student);
+    */
+
+    header("Access-Control-Allow-Origin: *");
+    header("Content-Type: application/json; charset=UTF-8");
+    header('Content-type: application/json');
+    $student = array(
+        'Erro' => 'Rota Inexistente!'
+    );
+
+    // header('HTTP/1.0 400 Bad Request');
+    new Response('unauthorized ', '', $student);
 });
 
 Route::execute();

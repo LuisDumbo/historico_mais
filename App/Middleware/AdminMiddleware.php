@@ -23,6 +23,9 @@ class AdminMiddleware
 
     public function handle($request, Closure $next)
     {
+
+        header("Access-Control-Allow-Origin: *");
+        header("Content-Type: application/json; charset=UTF-8");
         if (!preg_match('/Bearer\s(\S+)/', $_SERVER['HTTP_AUTHORIZATION'], $matches)) {
 
             return Redirect::redirect("not");
