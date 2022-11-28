@@ -26,9 +26,15 @@ class AdminMiddleware
 
         header("Access-Control-Allow-Origin: *");
         header("Content-Type: application/json; charset=UTF-8");
+        header('Content-type: application/json');
+
+        header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization');
+        header('Access-Control-Allow-Methods: PUT, POST, PATCH, DELETE, GET');
+
+
         if (!preg_match('/Bearer\s(\S+)/', $_SERVER['HTTP_AUTHORIZATION'], $matches)) {
 
-            return Redirect::redirect("not");
+            return Redirect::redirect("not_authorized");
         }
 
         $jwt = $matches[1];

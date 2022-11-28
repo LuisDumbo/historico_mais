@@ -85,6 +85,19 @@ Route::get("/not", function () {
     new Response('unauthorized ', '', $student);
 })->name('not');
 
+
+Route::get("/not_authorized", function () {
+
+    header("Access-Control-Allow-Origin: *");
+    header("Content-Type: application/json; charset=UTF-8");
+
+    header('Content-type: application/json');
+    $student = array(
+        'Erro' => 'Sem Headers de Aurotização'
+    );
+    new Response('unauthorized ', '', $student);
+})->name('not_auth');
+
 Route::fallback(function () {
     /*
     $student = array(
