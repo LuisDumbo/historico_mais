@@ -29,6 +29,15 @@ class PacienteController
 
     public function cadastrar()
     {
+        header("Access-Control-Allow-Origin: *");
+        header("Content-Type: application/json; charset=UTF-8");
+        header('Content-type: application/json');
+
+        header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization');
+        header('Access-Control-Allow-Methods: PUT, POST, PATCH, DELETE, GET');
+
+
+
         $json = file_get_contents('php://input');
         $data = json_decode($json, true);
 
@@ -45,6 +54,13 @@ class PacienteController
 
     public static function  editar()
     {
+
+        header("Access-Control-Allow-Origin: *");
+        header("Content-Type: application/json; charset=UTF-8");
+        header('Content-type: application/json');
+
+        header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization');
+        header('Access-Control-Allow-Methods: PUT, POST, PATCH, DELETE, GET');
 
         $json = file_get_contents('php://input');
         $data = json_decode($json, true);
@@ -67,11 +83,37 @@ class PacienteController
 
     public static function um_paciente()
     {
+        header("Access-Control-Allow-Origin: *");
+        header("Content-Type: application/json; charset=UTF-8");
+        header('Content-type: application/json');
+
+        header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization');
+        header('Access-Control-Allow-Methods: PUT, POST, PATCH, DELETE, GET');
+
+        if (!isset($_GET['bi'])) {
+           
+            new Response('ok', '', ["Deve Indicar o BI "]);
+        } else {
+          
+            try {
+                $listar = PacienteModel::find(["BI" => $_GET['bi']]);
+                $data = array();
+                foreach ($listar as $key) {
+                    array_push($data, $key);
+                }
+                new Response('ok', '', $data);
+            } catch (Exception $th) {
+                new Response('erro', '', [$th]);
+            }
+        }
+
+        /*
+
         $json = file_get_contents('php://input');
         $data = json_decode($json, true);
 
         if (empty($data)) {
-            new Response('ok', '', [""]);
+            new Response('ok', 'Sem dados', ["Sem dadso"]);
         } else {
             if (!isset($data["BI"])) {
                 new Response('erro', '', [" BI encontram-se vasios"]);
@@ -88,5 +130,6 @@ class PacienteController
                 }
             }
         }
+        */
     }
 }

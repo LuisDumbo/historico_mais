@@ -25,7 +25,7 @@ Route::middleware(AdminMiddleware::class)->prefix("api/")->group(function () {
     Route::get("/listar_paciente", [PacienteController::class, 'index']);
     Route::post("/registar_paciente", [PacienteController::class, 'cadastrar']);
     Route::post("/editar_paciente", [PacienteController::class, 'editar']);
-    Route::get("/paciente", [PacienteController::class, 'um_paciente']);
+    Route::get("/paciente?{bi}", [PacienteController::class, 'um_paciente']);
 
     Route::get("/listar_medico", [MedicoController::class, 'listar_medico']);
     Route::post("/registar_medico", [MedicoController::class, 'cadastrar_medico']);
