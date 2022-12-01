@@ -29,8 +29,8 @@ Route::middleware(AdminMiddleware::class)->prefix("api/")->group(function () {
 
     Route::get("/listar_medico", [MedicoController::class, 'listar_medico']);
     Route::post("/registar_medico", [MedicoController::class, 'cadastrar_medico']);
-    Route::post("/editar_mdico", [MedicoController::class, 'editar_medico']);
-    Route::get("/medico", [MedicoController::class, 'um_medico']);
+    Route::post("/editar_medico", [MedicoController::class, 'editar_medico']);
+    Route::get("/medico?{numero_ordem}", [MedicoController::class, 'um_medico']);
 
     Route::post("/registar_consulta", [ConsultaController::class, 'adicionar']);
     Route::post("/listar_consulta", [ConsultaController::class, 'listar']);

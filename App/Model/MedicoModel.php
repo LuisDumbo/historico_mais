@@ -39,11 +39,11 @@ class MedicoModel
         $colecao = MedicoModel::conectar_medico();
 
         $colecao->updateOne(
-            ['numero da ordem' => $numero_ordem],
+            ['numero_rodem' => $numero_ordem],
             ['$set' => $dados]
         );
 
-        return MedicoModel::find(['numero da ordem' => $numero_ordem]);
+        return MedicoModel::find(['numero_rodem' => $numero_ordem]);
     }
 
     public static function find($dados)
