@@ -91,10 +91,10 @@ class PacienteController
         header('Access-Control-Allow-Methods: PUT, POST, PATCH, DELETE, GET');
 
         if (!isset($_GET['bi'])) {
-           
+
             new Response('ok', '', ["Deve Indicar o BI "]);
         } else {
-          
+
             try {
                 $listar = PacienteModel::find(["BI" => $_GET['bi']]);
                 $data = array();
