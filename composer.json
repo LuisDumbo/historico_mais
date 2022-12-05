@@ -3,7 +3,8 @@
         "nicollassilva/minasrouter": "^1.0",
         "firebase/php-jwt": "^6.3",
         "mongodb/mongodb": "^1.12",
-        "devanych/view-renderer": "^1.0"
+        "devanych/view-renderer": "^1.0",
+        "aws/aws-sdk-php": "^3.252"
         
         
        
