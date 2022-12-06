@@ -135,27 +135,34 @@ class ExameController
         $tempPath  =  $_FILES['sendimage']['tmp_name'];
         $fileSize  =  $_FILES['sendimage']['size'];
 
-        $file_name = 'images/' . $_FILES['sendimage']['name'];
-        $temp_file_location = $_FILES['sendimage']['tmp_name'];
+
+        if (empty($fileName)) {
+            $errorMSG = json_encode(array("message" => "Selecione Uma imagem", "status" => false));
+            echo $errorMSG;
+        } else {
+            $file_name = 'images/' . $_FILES['sendimage']['name'];
+            $temp_file_location = $_FILES['sendimage']['tmp_name'];
 
 
-        $s3 = new S3Client([
-            'region'  => 'sa-east-1',
-            'version' => 'latest',
-            'credentials' => [
-                'key'    => "AKIA22OPPI5XUDTFFN73",
-                'secret' => "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",
-            ]
-        ]);
+            $s3 = new S3Client([
+                'region'  => 'sa-east-1',
+                'version' => 'latest',
+                'credentials' => [
+                    'key'    => $_ENV['AWS_S3_KEY'],
+                    'secret' => $_ENV['AWS_S3_SECRET'],
+                ]
+            ]);
 
-        $result = $s3->putObject([
-            'Bucket' => 'fililuisdumbo',
-            'Key'    => $file_name,
-            'SourceFile' => $temp_file_location
-        ]);
+            $result = $s3->putObject([
+                'Bucket' => 'fililuisdumbo',
 
-        echo json_encode(array("message" => $result, "status" => true));
+                'Key'    => $file_name,
+                'SourceFile' => $temp_file_location,
+                'ACL'        => 'public-read'
+            ]);
 
+            echo json_encode(array("message" => $result['ObjectURL'], "status" => true));
+        }
 
 
 
