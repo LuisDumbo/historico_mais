@@ -14,6 +14,14 @@ class ConsultaController
     public static function adicionar()
     {
 
+        header("Access-Control-Allow-Origin: *");
+        header("Content-Type: application/json; charset=UTF-8");
+        header('Content-type: application/json');
+
+        header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization');
+        header('Access-Control-Allow-Methods: PUT, POST, PATCH, DELETE, GET');
+
+
         $json = file_get_contents('php://input');
         $data = json_decode($json, true);
 
@@ -24,6 +32,8 @@ class ConsultaController
         } elseif (!isset($data["BI"]) || !isset($data["dados"])) {
             new Response('erro', '', [" BI  dados  encontram-se vasios"]);
         } else {
+
+            /*
 
             try {
                 $adiconar = "";
@@ -48,6 +58,7 @@ class ConsultaController
             } catch (\Throwable $th) {
                 new Response('erro', '', [""]);
             }
+            */
         }
     }
     public static function  adicionar_em_consulta($dados, $id_exame, $bi_paciente)
