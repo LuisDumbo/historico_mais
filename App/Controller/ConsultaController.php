@@ -29,9 +29,51 @@ class ConsultaController
 
         if (empty($data)) {
             new Response('ok', '', [""]);
-        } elseif (!isset($data["BI"]) || !isset($data["dados"])) {
-            new Response('erro', '', [" BI  dados  encontram-se vasios"]);
+        } elseif (!isset($data["BI"]) || !isset($data["dados"]) || !isset($data["numero_ordem"])) {
+            new Response('erro', '', [" BI, dados ou numero da ordem dos medicos se encontra vasio encontram-se vasios"]);
         } else {
+
+            try {
+
+                $headerBI = ["BI" => $data["BI"]];
+                $header_numeor_rodem = ["numero_ordem" => $data["numero_ordem"]];
+                $id_consulta = ["id_consulta" => uniqid($data["BI"])];
+                $body = $headerBI + $id_consulta + $header_numeor_rodem;
+
+                if (array_key_exists("exame", $data["dados"])) {
+
+                    $adiconar = [
+                        "header" => $body,
+                        "dada" => $data["dados"]
+                    ];
+                    /*
+                    $id_exame = ["id_exame" => uniqid(rand(10, 100))];
+                    $body += ConsultaController::adicionar_em_consulta($data["dados"], $id_exame["id_exame"], $data["BI"]);
+                    $adiconar = ConsultasModel::adicionar_consulta($body); */
+                } elseif (array_key_exists("Triagem", $data["dados"])) {
+                    
+                } else {
+                    /*
+                    $id_consulta = ["id_consulta" => uniqid($data["BI"])];
+                    $body +=  $data["dados"]; */
+                    //  $adiconar = ConsultasModel::adicionar_consulta($body);
+                    $adiconar = [
+                        "header" => $body,
+                        "dada" => $data["dados"]
+                    ];
+                }
+                $resultado = array();
+                /*
+                foreach ($adiconar as $row) {
+                    array_push($resultado, $row);
+                }; */
+
+                array_push($resultado, $adiconar);
+
+                new Response('ok', '', $resultado);
+            } catch (\Throwable $th) {
+                new Response('erro', '', [""]);
+            }
 
             /*
 
@@ -61,7 +103,7 @@ class ConsultaController
             */
         }
     }
-    public static function  adicionar_em_consulta($dados, $id_exame, $bi_paciente)
+    public static function  adicionar_em_consulta($dados, $id_exame, $bi_paciente, $id_consulta, $numero_ordem)
     {
 
         $body = ['exame' => $dados['exame'], "id_exame" => $id_exame, 'BI Paciente' => $bi_paciente];

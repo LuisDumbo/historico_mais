@@ -134,8 +134,6 @@ class ExameController
         $fileName  =  $_FILES['sendimage']['name'];
         $tempPath  =  $_FILES['sendimage']['tmp_name'];
         $fileSize  =  $_FILES['sendimage']['size'];
-        
-        /*
 
 
         if (empty($fileName)) {
@@ -167,7 +165,7 @@ class ExameController
         }
 
 
-*/
+        /*
 
 
         if (empty($fileName)) {
@@ -209,6 +207,6 @@ class ExameController
 
             echo json_encode(array("message" => "Image Uploaded Successfully", "status" => true));
         }
-        
+        */
     }
 }
