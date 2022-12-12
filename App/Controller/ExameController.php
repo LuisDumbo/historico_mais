@@ -15,11 +15,20 @@ class ExameController
     public static function adicionar_exame()
     {
 
+
+        header("Access-Control-Allow-Origin: *");
+        header("Content-Type: application/json; charset=UTF-8");
+        header('Content-type: application/json');
+
+        header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization');
+        header('Access-Control-Allow-Methods: PUT, POST, PATCH, DELETE, GET');
+
+
         $json = file_get_contents('php://input');
         $data = json_decode($json, true);
 
         if (empty($data)) {
-            new Response('ok', '', [""]);
+            new Response('ok', '', ["erro"]);
         } elseif (!isset($data["BI"]) || !isset($data["dados"])) {
             new Response('erro', '', [" BI  dados  encontram-se vasios"]);
         } else {
@@ -30,6 +39,7 @@ class ExameController
                 $adiconar =  ExameModel::adiconar_exame($body);
 
                 $resultado = array();
+
                 foreach ($adiconar as $row) {
                     array_push($resultado, $row);
                 };

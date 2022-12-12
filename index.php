@@ -33,7 +33,7 @@ Route::middleware(AdminMiddleware::class)->prefix("api/")->group(function () {
     Route::get("/medico?{numero_ordem}", [MedicoController::class, 'um_medico']);
 
     Route::post("/registar_consulta", [ConsultaController::class, 'adicionar']);
-    Route::post("/listar_consulta", [ConsultaController::class, 'listar']);
+    Route::get("/listar_consulta?{bi}", [ConsultaController::class, 'listar']);
     Route::post("/editar_consulta", [ConsultaController::class, 'editar']);
     Route::get("/consulta", [ConsultaController::class, 'uma_consulta']);
 

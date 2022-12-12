@@ -40,35 +40,18 @@ class ConsultaController
                 $id_consulta = ["id_consulta" => uniqid($data["BI"])];
                 $body = $headerBI + $id_consulta + $header_numeor_rodem;
 
-                if (array_key_exists("exame", $data["dados"])) {
+                $consulta = [
+                    "header" => $body,
+                    "dada" => $data["dados"]
+                ];
 
-                    $adiconar = [
-                        "header" => $body,
-                        "dada" => $data["dados"]
-                    ];
-                    /*
-                    $id_exame = ["id_exame" => uniqid(rand(10, 100))];
-                    $body += ConsultaController::adicionar_em_consulta($data["dados"], $id_exame["id_exame"], $data["BI"]);
-                    $adiconar = ConsultasModel::adicionar_consulta($body); */
-                } elseif (array_key_exists("Triagem", $data["dados"])) {
-                    
-                } else {
-                    /*
-                    $id_consulta = ["id_consulta" => uniqid($data["BI"])];
-                    $body +=  $data["dados"]; */
-                    //  $adiconar = ConsultasModel::adicionar_consulta($body);
-                    $adiconar = [
-                        "header" => $body,
-                        "dada" => $data["dados"]
-                    ];
-                }
+                $adiconar = ConsultasModel::adicionar_consulta($consulta);
                 $resultado = array();
-                /*
+
                 foreach ($adiconar as $row) {
                     array_push($resultado, $row);
-                }; */
+                };
 
-                array_push($resultado, $adiconar);
 
                 new Response('ok', '', $resultado);
             } catch (\Throwable $th) {
@@ -120,6 +103,40 @@ class ConsultaController
     public static function listar()
     {
 
+        header("Access-Control-Allow-Origin: *");
+        header("Content-Type: application/json; charset=UTF-8");
+        header('Content-type: application/json');
+
+        header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization');
+        header('Access-Control-Allow-Methods: PUT, POST, PATCH, DELETE, GET');
+
+
+
+        if (!isset($_GET["bi"])) {
+            new Response('erro', '', [" BI e dados encontram-se vasios"]);
+        } else {
+            try {
+                $adiconar = ConsultasModel::listar([
+                    "header" => [
+                        "BI" => $_GET['bi']
+                    ]
+                ]);
+                $data = array();
+                foreach ($adiconar as $restaurant => $valores) {
+                    array_push($data, $valores);
+                    /*
+                    $exame = ExameModel::find(['id_exame' => $valores['id_exame']]);
+                    foreach ($exame as $key) {
+                        $data[$restaurant]['exame'] = $key;
+                    } */
+                };
+                new Response('ok', '', $data);
+            } catch (Exception $th) {
+                new Response('erro', '', [$th]);
+            }
+        }
+        /*
+
         $json = file_get_contents('php://input');
         $data = json_decode($json, true);
 
@@ -130,14 +147,15 @@ class ConsultaController
                 new Response('erro', '', [" BI e dados encontram-se vasios"]);
             } else {
                 try {
-                    $adiconar = ConsultasModel::listar($data);
+                    $adiconar = ConsultasModel::listar($data["BI"]);
                     $data = array();
                     foreach ($adiconar as $restaurant => $valores) {
                         array_push($data, $valores);
+                        
                         $exame = ExameModel::find(['id_exame' => $valores['id_exame']]);
                         foreach ($exame as $key) {
                             $data[$restaurant]['exame'] = $key;
-                        }
+                        } 
                     };
                     new Response('ok', '', $data);
                 } catch (Exception $th) {
@@ -145,6 +163,7 @@ class ConsultaController
                 }
             }
         }
+        */
     }
 
     public static function uma_consulta()
