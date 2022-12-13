@@ -34,11 +34,12 @@ Route::middleware(AdminMiddleware::class)->prefix("api/")->group(function () {
 
     Route::post("/registar_consulta", [ConsultaController::class, 'adicionar']);
     Route::get("/listar_consulta?{bi}", [ConsultaController::class, 'listar']);
+    Route::get("/listar_consulta_medico?{numero_ordem}", [ConsultaController::class, 'listar_consulta_medico']);
     Route::post("/editar_consulta", [ConsultaController::class, 'editar']);
     Route::get("/consulta", [ConsultaController::class, 'uma_consulta']);
 
     Route::post("/registar_exame", [ExameController::class, 'adicionar_exame']);
-    Route::get("/listar_exame", [ExameController::class, 'listar_exame']);
+    Route::get("/listar_exame?{bi}", [ExameController::class, 'listar_exame']);
     Route::get("/exame", [ExameController::class, 'um_exame']);
     Route::post("/editar_exame", [ExameController::class, 'editar_exame']);
 

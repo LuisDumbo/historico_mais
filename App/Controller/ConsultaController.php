@@ -38,12 +38,13 @@ class ConsultaController
                 $headerBI = ["BI" => $data["BI"]];
                 $header_numeor_rodem = ["numero_ordem" => $data["numero_ordem"]];
                 $id_consulta = ["id_consulta" => uniqid($data["BI"])];
-                $body = $headerBI + $id_consulta + $header_numeor_rodem;
+                $consulta = $headerBI + $id_consulta + $header_numeor_rodem + $data["dados"];
 
+                /*
                 $consulta = [
                     "header" => $body,
                     "dada" => $data["dados"]
-                ];
+                ]; */
 
                 $adiconar = ConsultasModel::adicionar_consulta($consulta);
                 $resultado = array();
@@ -100,6 +101,39 @@ class ConsultaController
         }
     }
 
+    public static function listar_consulta_medico()
+    {
+
+        header("Access-Control-Allow-Origin: *");
+        header("Content-Type: application/json; charset=UTF-8");
+        header('Content-type: application/json');
+
+        header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization');
+        header('Access-Control-Allow-Methods: PUT, POST, PATCH, DELETE, GET');
+
+        if (!isset($_GET["numero_ordem"])) {
+            new Response('erro', '', [" numero_ordem e dados encontram-se vasios"]);
+        } else {
+            try {
+                $adiconar = ConsultasModel::listar([
+                    'numero_ordem' => $_GET['numero_ordem']
+                ]);
+                $data = array();
+                foreach ($adiconar as $restaurant => $valores) {
+                    array_push($data, $valores);
+                    /*
+                    $exame = ExameModel::find(['id_exame' => $valores['id_exame']]);
+                    foreach ($exame as $key) {
+                        $data[$restaurant]['exame'] = $key;
+                    } */
+                };
+                new Response('ok', '', $data);
+            } catch (Exception $th) {
+                new Response('erro', '', [$th]);
+            }
+        }
+    }
+
     public static function listar()
     {
 
@@ -112,14 +146,18 @@ class ConsultaController
 
 
 
+
         if (!isset($_GET["bi"])) {
             new Response('erro', '', [" BI e dados encontram-se vasios"]);
         } else {
             try {
-                $adiconar = ConsultasModel::listar([
-                    "header" => [
-                        "BI" => $_GET['bi']
+                $consulta = [
+                    'header' => [
+                        'BI' => $_GET['bi']
                     ]
+                ];
+                $adiconar = ConsultasModel::listar([
+                    'BI' => $_GET['bi']
                 ]);
                 $data = array();
                 foreach ($adiconar as $restaurant => $valores) {

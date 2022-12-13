@@ -53,17 +53,25 @@ class ExameController
 
     public static function listar_exame()
     {
+
+        header("Access-Control-Allow-Origin: *");
+        header("Content-Type: application/json; charset=UTF-8");
+        header('Content-type: application/json');
+
+        header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization');
+        header('Access-Control-Allow-Methods: PUT, POST, PATCH, DELETE, GET');
+
         $json = file_get_contents('php://input');
         $data = json_decode($json, true);
 
-        if (empty($data)) {
+        if (empty($_GET["bi"])) {
             new Response('ok', '', [""]);
         } else {
-            if (!isset($data["BI Paciente"])) {
+            if (!isset($_GET["bi"])) {
                 new Response('erro', '', [" BI e dados encontram-se vasios"]);
             } else {
                 try {
-                    $listar = ExameModel::find(["BI Paciente" => $data["BI Paciente"]]);
+                    $listar = ExameModel::find(["BI Paciente" => $_GET["bi"]]);
                     $data = array();
                     foreach ($listar as $key) {
                         array_push($data, $key);
