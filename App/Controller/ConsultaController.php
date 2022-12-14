@@ -121,11 +121,6 @@ class ConsultaController
                 $data = array();
                 foreach ($adiconar as $restaurant => $valores) {
                     array_push($data, $valores);
-                    /*
-                    $exame = ExameModel::find(['id_exame' => $valores['id_exame']]);
-                    foreach ($exame as $key) {
-                        $data[$restaurant]['exame'] = $key;
-                    } */
                 };
                 new Response('ok', '', $data);
             } catch (Exception $th) {
@@ -207,6 +202,44 @@ class ConsultaController
     public static function uma_consulta()
     {
 
+
+        header("Access-Control-Allow-Origin: *");
+        header("Content-Type: application/json; charset=UTF-8");
+        header('Content-type: application/json');
+
+        header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization');
+        header('Access-Control-Allow-Methods: PUT, POST, PATCH, DELETE, GET');
+
+
+        if (!isset($_GET["id_consulta"])) {
+            new Response('erro', '', [" id consulta BI e dados encontram-se vasios"]);
+        } else {
+            try {
+                $adiconar = ConsultasModel::find([
+                    'id_consulta' => $_GET["id_consulta"]
+                ]);
+                $data = array();
+                
+                foreach ($adiconar as $restaurant => $valores) {
+                    array_push($data, $valores);
+                    /*
+
+                    $exame = ExameModel::find(['id_exame' => $valores['id_exame']]);
+                    foreach ($exame as $key) {
+                        $data[$restaurant]['exame'] = $key;
+                    } */
+                };
+
+                new Response('ok', '', $data);
+            } catch (Exception $th) {
+                new Response('erro', '', [$th]);
+            }
+        }
+
+
+
+        /*
+
         $json = file_get_contents('php://input');
         $data = json_decode($json, true);
 
@@ -234,6 +267,7 @@ class ConsultaController
                 }
             }
         }
+        */
     }
 
     public static function find_editada_com_exame($id_consulta)
