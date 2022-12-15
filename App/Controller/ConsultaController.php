@@ -219,15 +219,16 @@ class ConsultaController
                     'id_consulta' => $_GET["id_consulta"]
                 ]);
                 $data = array();
-                
+
                 foreach ($adiconar as $restaurant => $valores) {
                     array_push($data, $valores);
-                    /*
 
-                    $exame = ExameModel::find(['id_exame' => $valores['id_exame']]);
+
+                    $exame = ExameModel::find(['consulta_id' => $valores['id_consulta']]);
                     foreach ($exame as $key) {
-                        $data[$restaurant]['exame'] = $key;
-                    } */
+                        //array_push($data, $key);
+                      $data[$restaurant]['exame'] = $key;
+                    }
                 };
 
                 new Response('ok', '', $data);
