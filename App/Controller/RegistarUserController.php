@@ -34,8 +34,6 @@ class RegistarUserController
                 $payload = [
                     'iss' => $nome,
                     'aud' => $password,
-                    // 'iat' => 1356999524,
-                    // 'nbf' => 1357000000
                 ];
                 $jwt = JWT::encode($payload, $key, 'HS256');
 
