@@ -13,6 +13,7 @@ use App\Controller\RegistarUserController;
 use App\Middleware\UserMiddleware;
 use App\Controller\UserController;
 use App\Controller\ExameController;
+use App\Controller\ProcedimentoController;
 use App\config\Start;
 use MinasRouter\Http\Request;
 
@@ -37,7 +38,10 @@ Route::middleware(AdminMiddleware::class)->prefix("api/")->group(function () {
     Route::get("/listar_consulta_medico?{numero_ordem}", [ConsultaController::class, 'listar_consulta_medico']);
     Route::post("/editar_consulta", [ConsultaController::class, 'editar']);
     Route::get("/consulta?{id_consulta}", [ConsultaController::class, 'uma_consulta']);
-    Route::post("/registar_procedimento", [ConsultaController::class, 'procedimento']);
+
+
+    Route::post("/registar_procedimento", [ProcedimentoController::class, 'procedimento']);
+    Route::post("/listar_procedimento", [ProcedimentoController::class, 'listarProcedimento']);
 
 
     Route::post("/registar_exame", [ExameController::class, 'adicionar_exame']);
@@ -46,7 +50,6 @@ Route::middleware(AdminMiddleware::class)->prefix("api/")->group(function () {
     Route::post("/editar_exame", [ExameController::class, 'editar_exame']);
 
     Route::post("/arquivo", [ExameController::class, 'ficheiro']);
-
 });
 
 
