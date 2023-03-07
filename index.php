@@ -41,7 +41,7 @@ Route::middleware(AdminMiddleware::class)->prefix("api/")->group(function () {
 
 
     Route::post("/registar_procedimento", [ProcedimentoController::class, 'procedimento']);
-    Route::post("/listar_procedimento", [ProcedimentoController::class, 'listarProcedimento']);
+    Route::get("/listar_procedimento?{bi}", [ProcedimentoController::class, 'listar']);
 
 
     Route::post("/registar_exame", [ExameController::class, 'adicionar_exame']);

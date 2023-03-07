@@ -32,7 +32,7 @@ class ProcedimentoController
                     ]
                 ];
                 $adiconar = PorcedimentoModel::listar([
-                    'BI' => $_GET['bi']
+                    'BI Paciente' => $_GET['bi']
                 ]);
                 $data = array();
                 foreach ($adiconar as $restaurant => $valores) {
@@ -68,8 +68,9 @@ class ProcedimentoController
         } else {
             try {
                 $headerBI = ["BI Paciente" => $data["BI"]];
+                $id_consulta = ["id_procedimento" => uniqid($data["BI"])];
                 $id_exame = ["id_exame" => uniqid(rand(10, 100))];
-                $body = $headerBI + $data["dados"] + $id_exame;
+                $body = $headerBI + $data["dados"] + $id_consulta  + $id_exame;
                 $adiconar =  PorcedimentoModel::adicionar_procediment($body);
 
                 $resultado = array();

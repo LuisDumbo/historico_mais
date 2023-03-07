@@ -19,20 +19,15 @@ class ConsultaController
         header("Access-Control-Allow-Origin: *");
         header("Content-Type: application/json; charset=UTF-8");
         header('Content-type: application/json');
-
         header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization');
         header('Access-Control-Allow-Methods: PUT, POST, PATCH, DELETE, GET');
-
-
         $json = file_get_contents('php://input');
         $data = json_decode($json, true);
-
-
 
         if (empty($data)) {
             new Response('ok', '', [""]);
         } elseif (!isset($data["BI"]) || !isset($data["dados"]) || !isset($data["numero_ordem"])) {
-            new Response('erro', '', [" BI, dados ou numero da ordem dos medicos se encontra vasio encontram-se vasios"]);
+            new Response('erro', '', [" BI, dados ou numero da ordem dos medicos encontram-se vasios"]);
         } else {
 
             try {
@@ -41,43 +36,8 @@ class ConsultaController
                 $header_numeor_rodem = ["numero_ordem" => $data["numero_ordem"]];
                 $id_consulta = ["id_consulta" => uniqid($data["BI"])];
                 $consulta = $headerBI + $id_consulta + $header_numeor_rodem + $data["dados"];
-
-                /*
-                $consulta = [
-                    "header" => $body,
-                    "dada" => $data["dados"]
-                ]; */
-
                 $adiconar = ConsultasModel::adicionar_consulta($consulta);
                 $resultado = array();
-
-                foreach ($adiconar as $row) {
-                    array_push($resultado, $row);
-                };
-
-
-                new Response('ok', '', $resultado);
-            } catch (\Throwable $th) {
-                new Response('erro', '', [""]);
-            }
-
-            /*
-
-            try {
-                $adiconar = "";
-                $headerBI = ["BI" => $data["BI"]];
-                $id_consulta = ["id_consulta" => uniqid($data["BI"])];
-                $body = $headerBI + $id_consulta;
-                if (array_key_exists("exame", $data["dados"])) {
-                    $id_exame = ["id_exame" => uniqid(rand(10, 100))];
-                    $body += ConsultaController::adicionar_em_consulta($data["dados"], $id_exame["id_exame"], $data["BI"]);
-                    $adiconar = ConsultasModel::adicionar_consulta($body);
-                } else {
-                    $id_consulta = ["id_consulta" => uniqid($data["BI"])];
-                    $body +=  $data["dados"];
-                    $adiconar = ConsultasModel::adicionar_consulta($body);
-                }
-                $resultado = array();
                 foreach ($adiconar as $row) {
                     array_push($resultado, $row);
                 };
@@ -86,8 +46,8 @@ class ConsultaController
             } catch (\Throwable $th) {
                 new Response('erro', '', [""]);
             }
-            */
         }
+        
     }
     public static function  adicionar_em_consulta($dados, $id_exame, $bi_paciente, $id_consulta, $numero_ordem)
     {
