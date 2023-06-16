@@ -1,54 +1,17 @@
- ###Dados Pessoas###
+# Easy  api in php
 
-        Nome Completo
-        Data
-        sexo
-        tipo sanguineo
-        BI
+Restful medical history API using PHP, MongoBD and AWS S3.
 
-###Dados Triagem ##
-        peso
-        altura
-        temperatura
+## Steps to Setup
 
-####Dados exames ## 
-        tipo 
-        resultado
-        img
+1. Install dependencies
 
+```bash
+composer install
+```
 
-###Dados Consultas ####
+2. configure mongodb in php
 
+https://www.mongodb.com/docs/drivers/php/
 
-exemplo 
-{
-    "BI" : "39ja938",
-    "dados" :{
-        "exame": "Uma nova consulta",
-        "mecio": "Luis dEMBO"
-    }
-}
-        medico_codigo
-        anamnese 
-        exames
-        prescricao_medica
-        diagnostico
-        data
-
-#####editar uma onsulta ##
-{
-    "id_consulta": "39ja938637212e25b3e9",
-    "dados":{
-        "mecio": "Pualo Diogo id editado muitas vezes"
-    },
-    "exame" :{
-            "id_exame": "32637212e25b42d",
-            "dados":{
-                "exame": "um exam com id da consulta que foi editado muitas outras   ves outra vez "
-            }
-        }
-}
-
-###internamentos###
-        local
-        tempo
+## Thanks

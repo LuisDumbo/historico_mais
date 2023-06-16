@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt">
 
 <head>
     <title>Documentação</title>
@@ -19,6 +19,18 @@
 
     <link rel="stylesheet" href="public/css/main.css" />
     <link rel="stylesheet" href="public/css/styleUser.css">
+
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 250px;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+    </style>
 
 </head>
 
@@ -51,23 +63,33 @@
         <div class="row">
 
             <div class="col-2 px-1 bg-dark position-fixed  " id="sticky-sidebar">
-                <div class="nav flex-column flex-nowrap vh-100 overflow-auto text-white p-2  sidemenu d-flex justify-content-center align-items-center   ">
-                    <a href="./" class="corlink">Link 1</a>
-                    <a href="./" class=" corlink">Link 2</a>
-                    <a href="./" class="corlink">Link 3</a>
-                    <a href="./" class="corlink">Link 4</a>
-                    <a href="./" class="corlink">Link 5</a>
-                    <a href="./" class="corlink">Link 6</a>
-                    <a href="./" class="corlink">Link 7</a>
-                    <a href="./" class="corlink">Link 8</a>
-                    <a href="./" class="corlink">Link 9</a>
-                    <a href="./" class="corlink">Link 10</a>
-                    <a href="./" class="corlink">Link 11</a>
-                    <a href="./" class="corlink">Link 12</a>
-                    <a href="./" class="corlink">Link 13</a>
-                    <a href="./" class="corlink">Link 14</a>
-                    <a href="./" class="corlink">Link 15</a>
-                    <a href="./" class="corlink">Link 16</a>
+                <div  id="navbar" class="nav flex-column flex-nowrap vh-100 overflow-auto text-white p-2  sidemenu d-flex justify-content-center align-items-center   ">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link scrollto" href="#lista_paciente">Listar Pacientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link scrollto" href="#registarPaciente">Registrar Paciente</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link scrollto" href="#editarPaciente">Editar Paciente</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Listar Consultas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Listar Exames</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Registrar Exame</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Editar Exame</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Listar Procedimento Médico</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
@@ -78,11 +100,7 @@
                         <div class="col-md-6 intro">
                             <h2 class="heading">Como Usar</h2>
                             <p class="masi">
-                                fakeStoreApi can be used with any type of shopping project that needs products, carts, and users
-                                in JSON
-                                format. you can use examples below to check how fakeStoreApi works and feel free to enjoy it in
-                                your awesome
-                                projects!
+                                Historico mais é uma ferramenta poderosa para acessar informações valiosas sobre a saúde de um paciente. Ao seguir as melhores práticas de segurança e entender como usar os endpoints e filtros corretamente, você pode obter informações precisas e confiáveis ​​para melhorar o atendimento ao paciente.
                             </p>
                         </div>
                     </section>
@@ -90,34 +108,98 @@
 
 
 
-                    <section id="try" class="row">
-                        <h2 class="heading">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Código de exemplo</font>
-                            </font>
-                        </h2>
+                    <section id="lista_paciente" class="row">
+                    <h2 class="heading">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Código de exemplo Listar Pacientes</font>
+                    </font>
+                </h2>
 
-                        <pre class="userstyl"><code>fetch('https://fakestoreapi.com/products/1')<font></font>
-.then(res=&gt;res.json())<font></font>
-.then(json=&gt;console.log(json))</code></pre>
+                <pre class="userstyl"><code>fetch('https://historico.com/api/paciente/3224')<font></font>
+            .then(res=&gt;res.json())<font></font>
+            .then(json=&gt;console.log(json))</code></pre>
 
-                        <h2 class="heading">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Resusltado</font>
-                            </font>
-                        </h2>
+                <h2 class="heading">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Resusltado</font>
+                    </font>
+                </h2>
 
-                        <pre class="userstyl">
-{
-"_id": {
-"$oid": "63199d2fac057601f504e028"
-},
-"nome": "editado mais vezes, mais vezes",
-"Data": "02/05/2022",
-"sexo": "Femenino",
-"tipo sanguinio": "AB2",
-"BI": "399ei9dk"
-}</pre>
+                <pre class="userstyl">
+        {
+            "_id": {
+                "$oid": "63199d2fac057601f504e028"
+            },
+            "nome": "Luis Dumbo",
+            "Data": "02/05/2022",
+            "sexo": "Femenino",
+            "tipo sanguinio": "AB2",
+            "BI": "003264457LA038"
+        }</pre>
+
+
+                    </section>
+
+                    <section id="editarPaciente" class="row">
+                    <h2 class="heading">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Código de exemplo Editar Paciente</font>
+                    </font>
+                </h2>
+
+                <pre class="userstyl"><code>fetch('https://historico.com/api/paciente/3224')<font></font>
+            .then(res=&gt;res.json())<font></font>
+            .then(json=&gt;console.log(json))</code></pre>
+
+                <h2 class="heading">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Resusltado</font>
+                    </font>
+                </h2>
+
+                <pre class="userstyl">
+        {
+            "_id": {
+                "$oid": "63199d2fac057601f504e028"
+            },
+            "nome": "Luis Dumbo",
+            "Data": "02/05/2022",
+            "sexo": "Femenino",
+            "tipo sanguinio": "AB2",
+            "BI": "003264457LA038"
+        }</pre>
+
+
+                    </section>
+
+                    <section id="registarPaciente" class="row">
+                    <h2 class="heading">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Código de exemplo Registrar Paciente</font>
+                    </font>
+                </h2>
+
+                <pre class="userstyl"><code>fetch('https://historico.com/api/paciente/3224')<font></font>
+            .then(res=&gt;res.json())<font></font>
+            .then(json=&gt;console.log(json))</code></pre>
+
+                <h2 class="heading">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Resusltado</font>
+                    </font>
+                </h2>
+
+                <pre class="userstyl">
+        {
+            "_id": {
+                "$oid": "63199d2fac057601f504e028"
+            },
+            "nome": "Luis Dumbo",
+            "Data": "02/05/2022",
+            "sexo": "Femenino",
+            "tipo sanguinio": "AB2",
+            "BI": "003264457LA038"
+        }</pre>
 
 
                     </section>

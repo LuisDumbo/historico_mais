@@ -153,6 +153,7 @@ class ExameController
         $tempPath  =  $_FILES['sendimage']['tmp_name'];
         $fileSize  =  $_FILES['sendimage']['size'];
 
+        /*
 
         if (empty($fileName)) {
             $errorMSG = json_encode(array("message" => "Selecione Uma imagem", "status" => false));
@@ -182,8 +183,9 @@ class ExameController
             echo json_encode(array("message" => $result['ObjectURL'], "status" => true));
         }
 
+        */
 
-        /*
+
 
 
         if (empty($fileName)) {
@@ -191,6 +193,10 @@ class ExameController
             echo $errorMSG;
         } else {
             $upload_path = 'upload/'; // set upload folder path 
+
+            move_uploaded_file($tempPath, $upload_path . $fileName);
+
+            /*
 
             $fileExt = strtolower(pathinfo($fileName, PATHINFO_EXTENSION)); // get image extension
 
@@ -206,25 +212,25 @@ class ExameController
                         move_uploaded_file($tempPath, $upload_path . $fileName); // move file from system temporary path to our upload folder path 
                         $errorMSG = json_encode(array("message" => $fileName, "status" => false));
                         echo $errorMSG;
-                    } else {
+                    }
+                     else {
                         $errorMSG = json_encode(array("message" => "Sorry, your file is too large, please upload 5 MB size", "status" => false));
                         echo $errorMSG;
-                    }
+                    } 
                 } else {
-                    $errorMSG = json_encode(array("message" => "Sorry, file already exists check upload folder", "status" => false));
+                    $errorMSG = json_encode(array("message" => $fileName, "status" => true));
                     echo $errorMSG;
                 }
             } else {
                 $errorMSG = json_encode(array("message" => "Sorry, only JPG, JPEG, PNG & GIF files are allowed", "status" => false));
                 echo $errorMSG;
-            }
+            } */
         }
 
         // if no error caused, continue ....
         if (!isset($errorMSG)) {
 
-            echo json_encode(array("message" => "Image Uploaded Successfully", "status" => true));
+            echo json_encode(array("message" => "http://192.168.0.100/historico_mais/Upload/".$fileName, "status" => true));
         }
-        */
     }
 }

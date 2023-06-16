@@ -84,24 +84,20 @@
             <section class="row text-center ">
                 <h3 class="center-align col-md-12">
                     <div style="vertical-align: inherit;">
-                        <div style="vertical-align: inherit;">Cansado dos dados do Lorem ipsum?!</div>
+                        <div style="vertical-align: inherit;">Seja responsável e respeite a LGPD. </div>
                     </div>
                 </h3>
                 <h3 class="center-align col-md-12">
                     <div style="vertical-align: inherit;">
-                        <div style="vertical-align: inherit;">Você não encontrou nenhuma API de e-commerce gratuita?!
+                        <div style="vertical-align: inherit;">Qualquer descumprimento com a LGPD terá uma ação jurídica.
                         </div>
                     </div>
                 </h3>
                 <p class="center-align">
                 <div style="vertical-align: inherit;">
                     <div style="vertical-align: inherit;">
-                        fakeStoreApi é uma API REST online gratuita que você pode usar sempre que precisar de dados
-                        pseudo-reais para seu e-commerce ou site de compras sem executar nenhum código do lado do
-                        servidor. </div>
-                    <div style="vertical-align: inherit;">É incrível para fins de ensino, códigos de amostra,
-                        testes, etc.
-                    </div>
+                    A Lei Geral de Proteção de Dados (LGPD) foi criada para proteger os dados pessoais dos cidadãos e garantir a privacidade e segurança dessas informações. É importante que empresas, instituições e indivíduos sejam responsáveis e respeitem a LGPD, cumprindo as diretrizes estabelecidas na lei. </div>
+                    
                 </div>
                 </p>
             </section>
@@ -115,7 +111,7 @@
                     </font>
                 </h2>
 
-                <pre class="userstyl"><code>fetch('https://fakestoreapi.com/products/1')<font></font>
+                <pre class="userstyl"><code>fetch('https://historico.com/api/paciente/3224')<font></font>
             .then(res=&gt;res.json())<font></font>
             .then(json=&gt;console.log(json))</code></pre>
 
@@ -130,11 +126,11 @@
             "_id": {
                 "$oid": "63199d2fac057601f504e028"
             },
-            "nome": "editado mais vezes, mais vezes",
+            "nome": "Luis Dumbo",
             "Data": "02/05/2022",
             "sexo": "Femenino",
             "tipo sanguinio": "AB2",
-            "BI": "399ei9dk"
+            "BI": "003264457LA038"
         }</pre>
 
 
@@ -253,15 +249,12 @@
             </span>
             <font style="vertical-align: inherit;">
                 <font style="vertical-align: inherit;"> por </font>
-            </font><a target="_blank" rel="noopener noreferrer" href="https://keikaavousi.com/">
+            </font><a target="_blank" rel="noopener noreferrer" href="#">
                 <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">MohammadReza Keikavousi</font>
+                    <font style="vertical-align: inherit;">Luis Dumbo</font>
                 </font>
             </a>
         </p>
-        <a href="https://donate.keikaavousi.com/" target="_blank" class="donate">
-            <img src="./Fake Store API_files/coffee.svg">
-            Buy me a coffee</a>
     </footer>
     <!--
     <form action="<?php echo '/historico_mais' . route("logout") ?>" method="POST" class="login-form">

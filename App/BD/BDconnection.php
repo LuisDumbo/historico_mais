@@ -9,7 +9,8 @@ class BDconnection{
     
     public static function connect(){
         $client = new Client(
-            'mongodb+srv://'.$_ENV['MDB_USER'].':'.$_ENV['MDB_PASS'].'@'.$_ENV['ATLAS_CLUSTER_SRV']
+            //'mongodb+srv://'.$_ENV['MDB_USER'].':'.$_ENV['MDB_PASS'].'@'.$_ENV['ATLAS_CLUSTER_SRV']
+            'mongodb://localhost:27017'
          );
          
          return $client ;

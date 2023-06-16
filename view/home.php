@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@
     <link href="public/css/home/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="public/css/home/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 
-    <link rel="shortcut icon" href="public/img/favicon/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="public/img/favicon/favicon.ico" type="image/x-icon" />
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -52,7 +52,7 @@
                     <li><a class="nav-link scrollto" href="#about">Quem Somos</a></li>
                     <li><a class="nav-link scrollto" href="#services">Servoços</a></li>
                     <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
-                    <li><a class="nav-link scrollto"  href="<?php echo '/historico_mais' . route("Registar") ?>">Cdastre-se</a></li>
+                    <li><a class="nav-link scrollto" href="<?php echo '/historico_mais' . route("Registar") ?>">Cdastre-se</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -74,9 +74,7 @@
                 <div class="carousel-item active" style="background-image: url(public/img/slide/slide-1.png)">
                     <div class="container">
                         <h2>Bem vindo a <span>API</span> Historico +</h2>
-                        <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam.
-                            Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus
-                            deleniti vel.</p>
+                        <p>Bem-vindo à API Histórico +, uma poderosa solução para coleta e análise de dados de pacientes. Com essa tecnologia, você terá acesso a informações precisas e completas sobre o histórico médico dos pacientes, permitindo uma melhor tomada de decisões no diagnóstico, tratamento e monitoramento da saúde.</p>
 
                     </div>
                 </div>
@@ -84,10 +82,8 @@
                 <!-- Slide 2 -->
                 <div class="carousel-item" style="background-image: url(public/img/slide/slide-2.jpeg)">
                     <div class="container">
-                        <h2>Dados Medicos Mais Proximos</h2>
-                        <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam.
-                            Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus
-                            deleniti vel.</p>
+                        <h2>Dados Médicos Mais Próximos </h2>
+                        <p>Essa tecnologia traz muitos benefícios para o controle e tratamento de doenças, permitindo uma visão mais completa do histórico médico dos pacientes. Com essas informações, os profissionais de saúde podem fazer um diagnóstico mais preciso.</p>
 
                     </div>
                 </div>
@@ -96,9 +92,7 @@
                 <div class="carousel-item" style="background-image: url(public/img/slide/slide3.jpg)">
                     <div class="container">
                         <h2>Controle de Pandemias</h2>
-                        <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam.
-                            Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus
-                            deleniti vel.</p>
+                        <p>A API de histórico mais de pacientes é uma ferramenta fundamental para o controle de pandemias, permitindo a coleta e análise de dados sobre pacientes de diferentes fontes. Com essa tecnologia, é possível obter informações mais precisas e completas sobre os pacientes.</p>
 
                     </div>
                 </div>
@@ -123,35 +117,25 @@
 
             <div class="section-title">
                 <h2>Quem Somos</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-                    in iste officiis commodi quidem hic quas.</p>
+                <p>Nós somos uma empresa de tecnologia comprometida com o desenvolvimento de soluções inovadoras para o setor de saúde. Nosso principal objetivo é ajudar profissionais de saúde e instituições a fornecer um atendimento de qualidade aos pacientes, por meio do uso de tecnologias avançadas.</p>
             </div>
 
             <div class="row">
                 <div class="col-lg-6" data-aos="fade-right">
-                    <img src="assets/img/about.jpg" class="img-fluid" alt="">
+                    <img src="public/img/slide/slide-1.png" class="img-fluid" alt="">
                 </div>
+
                 <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
-                    <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+                    <h3>Nosso objetivo com a API de histórico mais de pacientes é facilitar o trabalho dos profissionais de saúde, permitindo que eles tenham acesso rápido e fácil aos dados dos pacientes</h3>
                     <p class="fst-italic">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore
-                        magna aliqua.
-                    </p>
+                        A API de histórico mais de pacientes é uma solução que permite a coleta, armazenamento e análise de dados de pacientes. Para proteger os dados dos pacientes, é necessário seguir as diretrizes estabelecidas pela Lei Geral de Proteção de Dados (LGPD)  Lei nº 22/11, de 17 de junho de 2011, </p>
                     <ul>
-                        <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                        <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                        <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                            irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla
-                            pariatur.</li>
+                        <li><i class="bi bi-check-circle"></i> Consentimento informado: é fundamental que os pacientes tenham conhecimento do uso que será feito dos seus dados e concordem com isso..</li>
+                        <li><i class="bi bi-check-circle"></i> Acesso restrito: o acesso aos dados dos pacientes deve ser restrito a profissionais autorizados e que necessitem dessas informações para realizar seu trabalho. É importante definir políticas de acesso e controle de acesso aos dados para garantir que apenas pessoas autorizadas tenham acesso a eles.</li>
+                        <li><i class="bi bi-check-circle"></i> Criptografia de dados: é importante adotar medidas de segurança, como a criptografia dos dados, para proteger as informações dos pacientes durante a transmissão e armazenamento na API.</li>
                     </ul>
                     <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum
-                    </p>
+                    Qualquer descumprimento com a LGPD pode ter consequências graves, incluindo ações judiciais. As empresas que não seguem as diretrizes da LGPD podem enfrentar multas, sanções administrativas e ações civis públicas, além de danos à sua reputação. Além disso, os indivíduos que tiverem seus dados pessoais violados podem ter direito a indenizações por danos morais e materiais.   </p>
                 </div>
             </div>
 
@@ -162,49 +146,27 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h2>Services</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-                    in iste officiis commodi quidem hic quas.</p>
+                <h2>Serviços</h2>
+                <p>Nós oferecemos uma série de serviços relacionados à API de histórico mais de pacientes, com o objetivo de garantir que nossos clientes tenham acesso às melhores soluções para coleta, armazenamento e análise de dados de pacientes.</p>
             </div>
 
             <div class="row">
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
                     <div class="icon"><i class="fas fa-heartbeat"></i></div>
-                    <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                    <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-                        occaecati cupiditate non provident</p>
+                    <h4 class="title"><a href="">Implementação da API</a></h4>
+                    <p class="description">Nossa equipe de especialistas pode ajudar na implementação da API de histórico mais de pacientes em diferentes sistemas de saúde</p>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
                     <div class="icon"><i class="fas fa-pills"></i></div>
-                    <h4 class="title"><a href="">Dolor Sitema</a></h4>
-                    <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat tarad limino ata</p>
+                    <h4 class="title"><a href="">Customização da API</a></h4>
+                    <p class="description">Entendemos que cada instituição de saúde tem suas próprias necessidades e demandas específicas. Por isso, oferecemos serviços de customização da API de acordo com as necessidades de cada cliente</p>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
                     <div class="icon"><i class="fas fa-hospital-user"></i></div>
-                    <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                    <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                        fugiat nulla pariatur</p>
+                    <h4 class="title"><a href="">Treinamento</a></h4>
+                    <p class="description">Oferecemos treinamento para os profissionais de saúde que utilizarão a API de histórico mais de pacientes, garantindo que eles tenham conhecimento completo sobre a solução </p>
                 </div>
-                <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="icon"><i class="fas fa-dna"></i></div>
-                    <h4 class="title"><a href="">Magni Dolores</a></h4>
-                    <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                        mollit anim id est laborum</p>
-                </div>
-                <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="icon"><i class="fas fa-wheelchair"></i></div>
-                    <h4 class="title"><a href="">Nemo Enim</a></h4>
-                    <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                        voluptatum deleniti atque</p>
-                </div>
-                <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="icon"><i class="fas fa-notes-medical"></i></div>
-                    <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-                    <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum
-                        soluta nobis est eligendi</p>
-                </div>
+
             </div>
 
         </div>
@@ -213,10 +175,8 @@
     <section id="contact" class="contact">
 
         <div class="section-title">
-            <h2>Contact</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-                in iste officiis commodi quidem hic quas.</p>
+            <h2>Contacto</h2>
+            <p>Estamos insteiramente ligados para qualquer informação</p>
         </div>
         <div class="container">
 
@@ -228,22 +188,22 @@
                         <div class="col-md-12">
                             <div class="info-box">
                                 <i class="bx bx-map"></i>
-                                <h3>Our Address</h3>
-                                <p>A108 Adam Street, New York, NY 535022</p>
+                                <h3>Endereço</h3>
+                                <p>Ilha de Luanda</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="info-box mt-4">
                                 <i class="bx bx-envelope"></i>
-                                <h3>Email Us</h3>
-                                <p>info@example.com<br>contact@example.com</p>
+                                <h3>Email</h3>
+                                <p>contacto@historico.com<br>recrutamento@historico.com</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="info-box mt-4">
                                 <i class="bx bx-phone-call"></i>
                                 <h3>Call Us</h3>
-                                <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+                                <p>934 732 249<br>912 844 935</p>
                             </div>
                         </div>
                     </div>
@@ -254,24 +214,24 @@
                     <form action="forms/contact.php" method="post" role="form" class="php-email-form">
                         <div class="row">
                             <div class="col-md-6 form-group">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Seu Nome" required="">
                             </div>
                             <div class="col-md-6 form-group mt-3 mt-md-0">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Email" required="">
                             </div>
                         </div>
                         <div class="form-group mt-3">
-                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required="">
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Sumario" required="">
                         </div>
                         <div class="form-group mt-3">
-                            <textarea class="form-control" name="message" rows="7" placeholder="Message" required=""></textarea>
+                            <textarea class="form-control" name="message" rows="7" placeholder="Mensagem" required=""></textarea>
                         </div>
                         <div class="my-3">
                             <div class="loading">Loading</div>
                             <div class="error-message"></div>
-                            <div class="sent-message">Your message has been sent. Thank you!</div>
+                            <div class="sent-message">Sua mensagem foi enviada Obrigado</div>
                         </div>
-                        <div class="text-center"><button type="submit">Send Message</button></div>
+                        <div class="text-center"><button type="submit">Enviar Mensagem</button></div>
                     </form>
                 </div>
 
@@ -291,48 +251,31 @@
                         <div class="footer-info">
                             <h3>Medicio</h3>
                             <p>
-                                A108 Adam Street <br>
-                                NY 535022, USA<br><br>
-                                <strong>Phone:</strong> +1 5589 55488 55<br>
-                                <strong>Email:</strong> info@example.com<br>
+                                Ilhda de Luanda <br>
+                                <strong>Telefone:</strong> 934 732 249<br>
+                                <strong>Email:</strong> contacto@historico.com<<br>
                             </p>
-                            <div class="social-links mt-3">
-                                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-                            </div>
+
                         </div>
                     </div>
 
                     <div class="col-lg-2 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
+                        <h4>Links do usuario</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#about">Quem Somos</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#services">Servoços</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#contact">Contacto</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Services</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-                        </ul>
-                    </div>
+
 
                     <div class="col-lg-4 col-md-6 footer-newsletter">
-                        <h4>Our Newsletter</h4>
-                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                        <h4>Alguma Informação</h4>
+                        <p>Escreva aqui uma sugestão </p>
                         <form action="" method="post">
-                            <input type="email" name="email"><input type="submit" value="Subscribe">
+                            <input type="email" name="email"><input type="submit" value="Enviar">
                         </form>
 
                     </div>
@@ -343,14 +286,14 @@
 
         <div class="container">
             <div class="copyright">
-                &copy; Copyright <strong><span>Medicio</span></strong>. All Rights Reserved
+                &copy; Copyright <strong><span>Luis</span></strong>. All Rights Reserved
             </div>
             <div class="credits">
                 <!-- All the links in the footer should remain intact. -->
                 <!-- You can delete the links only if you purchased the pro version. -->
                 <!-- Licensing information: https://bootstrapmade.com/license/ -->
                 <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medicio-free-bootstrap-theme/ -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                Designed by <a href="#">Luis Dumbo</a>
             </div>
         </div>
     </footer><!-- End Footer -->
